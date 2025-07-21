@@ -1,0 +1,37 @@
+﻿@model Spread.PraticalEvaluation.UI.Web.Models.Cadastros.AuthorViewModel
+
+@{
+    ViewData["Title"] = "Cadastro de Autores";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Name, new { @class = "control-label col-md-2" } )
+            <div class="col-md-10">
+                @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <br/>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Incluir" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="row">
+            @Html.ActionLink("Voltar", "List")
+        </div>
+
+    </div>
+}
+
+
